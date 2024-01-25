@@ -1,3 +1,5 @@
+package test_strings;
+
 import org.junit.Test;
 import strings.ReverseWords;
 

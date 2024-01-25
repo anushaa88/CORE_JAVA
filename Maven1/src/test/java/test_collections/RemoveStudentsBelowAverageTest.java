@@ -1,3 +1,5 @@
+package test_collections;
+
 import collections.Student;
 import org.junit.Test;
 import java.util.ArrayList;

@@ -16,23 +16,6 @@ public class RemoveStudentsBelowAverage {
         studentList.removeIf(student -> student.gpa < averageGPA);
     }
 
-    public static void main(String[] args) {
-        // Example usage
-        ArrayList<Student> students = new ArrayList<>();
-        students.add(new Student("Anu", "Salvatore", 3.5));
-        students.add(new Student("Janu", "Forbes", 3.2));
-        students.add(new Student("Niha", "Bennet", 3.8));
-
-        RemoveStudentsBelowAverage remover = new RemoveStudentsBelowAverage();
-
-        System.out.println("Before removal:");
-        printStudents(students);
-
-        remover.removeBelowAverageGPA(students);
-
-        System.out.println("\nAfter removal:");
-        printStudents(students);
-    }
 
     private static void printStudents(ArrayList<Student> students) {
         for (Student student : students) {

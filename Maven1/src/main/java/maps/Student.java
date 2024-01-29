@@ -1,6 +1,8 @@
+// Student.java
 package maps;
 
 public class Student {
+    // Attributes
     private String firstName;
     private String lastName;
     private double GPA;

@@ -2,11 +2,6 @@ package maps;
 import java.util.HashMap;
 
 public class CharacterCounter {
-    public static void main(String[] args) {
-        String inputString = "test string";
-        printCharacterCounts(inputString);
-    }
-
     public static void printCharacterCounts(String inputString) {
         // Create a HashMap to store characters and their counts
         HashMap<Character, Integer> charCountMap = new HashMap<>();

@@ -2,17 +2,6 @@ package maps;
 import java.util.HashMap;
 
 public class ArrayTwoSum {
-    public static void main(String[] args) {
-        int[] nums = {10, 20, 30, 40, 50, 60};
-        int target = 100;
-        int[] result = twoSum(nums, target);
-        if (result != null) {
-            System.out.println("Output: [" + result[0] + ", " + result[1] + "]");
-        } else {
-            System.out.println("No two elements add up to the target sum.");
-        }
-    }
-
     public static int[] twoSum(int[] nums, int target) {
         // Create a HashMap to store the complement of each element and its index
         HashMap<Integer, Integer> complementMap = new HashMap<>();

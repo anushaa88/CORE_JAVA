@@ -1,9 +1,6 @@
 package test_threads;
 import threads.DeadlockExample;
-
-
 import org.junit.Test;
-
 public class DeadlockExampleTest {
 
     @Test

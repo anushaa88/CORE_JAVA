@@ -1,23 +1,42 @@
-
 package test_threads;
-
 import threads.Singleton;
 
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
 public class SingletonTest {
-    public static void main(String[] args) {
-        // Get instances of Singleton and ensure they are the same
-        Singleton singleton1 = Singleton.getInstance();
-        Singleton singleton2 = Singleton.getInstance();
 
-        // Print hash codes to verify if both instances are the same
-        System.out.println("Hash code of singleton1: " + singleton1.hashCode());
-        System.out.println("Hash code of singleton2: " + singleton2.hashCode());
+    @Test
+    public void testSingletonInstance() {
+        // Get the singleton instance
+        Singleton instance1 = Singleton.getInstance();
+        Singleton instance2 = Singleton.getInstance();
 
-        // Check if both instances are the same
-        if (singleton1 == singleton2) {
-            System.out.println("Singleton pattern is working correctly!");
-        } else {
-            System.out.println("Singleton pattern has issues!");
-        }
+        // Check if both instances are the same object
+        assertEquals("Both instances should be the same object", instance1, instance2);
     }
+
+    @Test
+    public void testSingletonOperation() {
+        // Get the singleton instance
+        Singleton instance = Singleton.getInstance();
+
+        // Perform an operation
+        instance.performOperation();
+
+        // Add more assertions if needed
+    }
+
+//    @Test
+//    public void testCreateAnotherInstance() {
+//        // Get the singleton instance
+//        Singleton instance1 = Singleton.getInstance();
+//
+//        // Try to create another instance
+//        Singleton instance2 = new Singleton();
+//
+//        // Verify that attempting to create another instance returns false
+//        assertFalse("Another instance should not be created", instance1 != instance2);
+//    }
 }

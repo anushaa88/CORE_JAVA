@@ -2,23 +2,23 @@
 package threads;
 
 public class Singleton {
-    // Private static variable to hold the instance of the Singleton class
     private static Singleton instance;
 
-    // Private constructor to prevent instantiation from other classes
+    // Private constructor to prevent instantiation from outside
     private Singleton() {
     }
 
-    // Static method to get the instance of the Singleton class
+    // Static method to get the singleton instance
     public static Singleton getInstance() {
-        // Check if the instance is null, then create a new instance
+        // Lazy initialization - create the instance only when needed
         if (instance == null) {
-            synchronized (Singleton.class) {
-                if (instance == null) {
-                    instance = new Singleton();
-                }
-            }
+            instance = new Singleton();
         }
         return instance;
+    }
+
+    // Method to perform some operation
+    public void performOperation() {
+        System.out.println("Singleton instance is performing an operation.");
     }
 }

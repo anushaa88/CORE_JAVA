@@ -1,21 +1,23 @@
-// test_threads/DeadlockExampleTest.java
 package test_threads;
-
 import threads.DeadlockExample;
 
+
+import org.junit.Test;
+
 public class DeadlockExampleTest {
-    public static void main(String[] args) {
-        final DeadlockExample deadlockExample = new DeadlockExample();
 
-        Thread t1 = new Thread(() -> {
-            deadlockExample.method1();
-        });
+    @Test
+    public void testDeadlock() throws InterruptedException {
+        DeadlockExample example = new DeadlockExample();
 
-        Thread t2 = new Thread(() -> {
-            deadlockExample.method2();
-        });
+        // Create and start two threads
+        Thread thread1 = new Thread(() -> example.method1());
+        Thread thread2 = new Thread(() -> example.method2());
+        thread1.start();
+        thread2.start();
 
-        t1.start();
-        t2.start();
+        // Join the threads to wait for their completion
+        thread1.join();
+        thread2.join();
     }
 }
